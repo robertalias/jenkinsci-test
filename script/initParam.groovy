@@ -7,6 +7,6 @@ properties([
         choice(name: 'TRIGGER_Choice', choices: 'aaa\nbbb\nccc\nxxx\nyyy', defaultValue: 'xxx', description: '')
     ]),
     pipelineTriggers([
-        parameterizedCron('H/3 * * * * % TRIGGER_Boolean=true')
+        parameterizedCron('H(0-5) 0 * * 1 % TRIGGER_Boolean=true')
     ])
 ])
