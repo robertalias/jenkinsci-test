@@ -25,7 +25,7 @@ node {
 def update_commit_status(owner, repository, pullNumber, state) {
     if(pullNumber){
         withCredentials([usernamePassword(credentialsId: 'GITHUB_ACCESS_TOKEN', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
-            sh "./script/git_commit_status.py --user ${USERNAME} --token ${PASSWORD}" +
+            sh "./src/script/git_commit_status.py --user ${USERNAME} --token ${PASSWORD}" +
                 " --owner ${owner}" +
                 " --repository ${repository}" +
                 " --pull-number ${pullNumber}" +
